@@ -4,12 +4,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>Laboratorio 6
     </title>
 </head>
 
 <body>
+    <header>
+        <h1> Tienda en línea de sudaderas </h1>
+    </header>
 
+    <div class="base">
+        <div class="password">
+            <label for="psw">Contraseña</label>
+            <input type="password" id="psw" name="psw" required>
+        </div>
+        <div class="password-validator">
+            <button onclick="mostrarTienda()"> Validar </button>
+        </div>
+    </div>
+    <div id="sudaderas" class="invalida">
+        <div class="objeto01">
+            <h3> Sudadera 1</h3>
+            <p> $250</p>
+            <button onclick="agregarSudadera01()"> + </button>
+            <p id="agregar01"></p>
+        </div>
+        <div class="objeto02">
+            <h3> Sudadera 2</h3>
+            <p> $450</p>
+            <button onclick="agregarSudadera02()"> + </button>
+            <p id="agregar02"></p>
+        </div>
+        <div class="objeto03">
+            <h3> Sudadera 3</h3>
+            <p> $350</p>
+            <button onclick="agregarSudadera03()"> + </button>
+            <p id="agregar03"></p>
+        </div>
+        <div>
+            <button onclick="calcularPrecio()"> Calcular Precio </button>
+            <p id="precio"></p>
+            <p id="iva"></p>
+            <p id="precio-final"></p>
+        </div>
+    </div>
 </body>
+<script src="js/tienda.js"></script>
 
 </html>

@@ -1,0 +1,11 @@
+.invalida {
+    display: none;
+}
+
+.valida {
+    display: block;
+}
+
+body {
+    text-align: center;
+}
