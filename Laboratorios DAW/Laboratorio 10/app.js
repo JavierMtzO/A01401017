@@ -17,7 +17,7 @@ const server = http.createServer((request, response) => {
             response.write('<li><a href="/' + carro.nombre + '">' + carro.nombre + '</a></li>');
         }
         response.write('</ul>');
-        response.write('<ul><li><a href="/comprar">Comprar carro </a></li></ul>');
+        response.write('<ul><li><a href="/carros/comprar">Comprar carro </a></li></ul>');
         response.write('</body></html>');
         response.end();
     } else if (request.url === '/Honda') {
