@@ -1,8 +1,3 @@
-const express = require('express');
-
-const router = express.Router();
-path = require('path')
-
 const nuevosCarros = [
     {
         nombre: 'Honda',
@@ -31,27 +26,23 @@ const nuevosCarros = [
     }
 ];
 
-router.get('/', (request, response, next) => {
-    // response.sendFile(path.join(__dirname, '..', 'views', 'autos.html'));
-    response.render('autos', { nuevosCarros: nuevosCarros });
-});
+module.exports = class Auto {
 
+    //Constructor de la clase. Sirve para crear un nuevo objeto, y en él se definen las propiedades del modelo
+    constructor(nombre, desc, imagen) {
+        this.nombre = nombre;
+        this.desc = desc;
+        this.imagen = imagen;
+    }
 
-router.get('/comprar', (request, response, next) => {
-    response.render('nuevoCarro');
-});
-router.post('/comprar', (request, response, next) => {
-    console.log(request.body);
-    nuevosCarros.push(
-        {
-            nombre: request.body.nombre,
-            desc: 'El nuevo ' + request.body.nombre + ' que se acaba de vender',
-            imagen: 'https://c0.klipartz.com/pngpicture/831/609/gratis-png-caricatura-coche.png'
-        });
-    // response.send('Gracias por comprar el más nuevo ' + request.body.nombre + '!!!');
-    response.render('gracias', { nuevosCarros: nuevosCarros });
+    //Este método servirá para guardar de manera persistente el nuevo objeto. 
+    save() {
+        nuevosCarros.push(this);
+    }
 
-});
+    //Este método servirá para devolver los objetos del almacenamiento persistente.
+    static fetchAll() {
+        return nuevosCarros;
+    }
 
-
-module.exports = router;
+}
