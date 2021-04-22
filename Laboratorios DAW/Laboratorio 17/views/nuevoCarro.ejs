@@ -1,0 +1,10 @@
+<%- include('includes/header.ejs') %>
+<h1> Comprar carro </h1>
+<form action="comprar" method="POST">
+    <label for="nombre"> Modelo </label>
+    <input type="text" name="nombre" required>
+    <label for="descripcion"> Descripcion </label>
+    <input type="text" name="descripcion" required>
+    <input type="submit" name="enviar" value="Comprar">
+</form>
+<%- include('includes/footer.ejs') %>
