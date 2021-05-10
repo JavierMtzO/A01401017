@@ -1,4 +1,4 @@
-Segundo examen parcial 
+<!-- Segundo examen parcial 
 
 Javier Martínez Olivares
 
@@ -15,4 +15,4 @@ Instrucciones
 7. Abrir terminal y ubicarse en la carpeta "Examen parcial 2"
 8. Descargar aplicación con "npm install"
 9. Correr aplicación con el comando "npm start"
-10. Visualizar la aplicacion en el navegador de su preferencia visitando la siguiente URL: http://localhost:3000/
+10. Visualizar la aplicacion en el navegador de su preferencia visitando la siguiente URL: http://localhost:3000/ -->

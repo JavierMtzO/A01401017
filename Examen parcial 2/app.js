@@ -4,7 +4,6 @@ const app = express();
 
 const rutasIncidentes = require('./routes/incidentes');
 
-
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');

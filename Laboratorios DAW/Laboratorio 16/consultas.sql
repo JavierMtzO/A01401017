@@ -43,3 +43,11 @@ minus
 SQL
 select * from entregan,materiales
 -- ¿Cómo está definido el número de tuplas de este resultado en términos del número de tuplas de entregan y de materiales?
+-- Se muestra cada entrega con cada material que su id coincida.
+
+
+--Plantea ahora una consulta para obtener las descripciones de los materiales entregados en el año 2000.
+SQL
+select descripcion from materiales,entregan
+where materiales.clave = entregan.clave and entregan.fecha between '01-01-2000' and '31-12-2000'
+
