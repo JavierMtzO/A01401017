@@ -3,7 +3,7 @@ const db = require('../util/database');
 module.exports = class Incidente {
 
     //Constructor de la clase. Sirve para crear un nuevo objeto, y en él se definen las propiedades del modelo
-    constructor(tipo, lugar, fecha) {
+    constructor(tipo, lugar) {
         this.tipo = tipo;
         this.lugar = lugar;
     }

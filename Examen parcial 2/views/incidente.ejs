@@ -46,7 +46,7 @@
 
                 <select id="tipo" name="tipo" required>
                     <% for (let tipo of nuevoTipo) {%>
-                    <option value="<%= tipo.tipoAccidente %>"><%= tipo.tipoAccidente %></option>
+                    <option value="<%= tipo.idTipo %>"><%= tipo.tipoAccidente %></option>
                     <% }%>
                 </select>
 
@@ -54,7 +54,7 @@
 
                 <select id="lugar" name="lugar" required>
                     <% for (let lugar of nuevoLugar) {%>
-                    <option value="<%= lugar.lugarAccidente %>"><%= lugar.lugarAccidente %></option>
+                    <option value="<%= lugar.idLugar %>"><%= lugar.lugarAccidente %></option>
                     <% }%>
                 </select>
 
