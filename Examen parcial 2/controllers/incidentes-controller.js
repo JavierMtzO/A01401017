@@ -6,6 +6,7 @@ const Lugar = require('../models/lugar-model.js');
 exports.get = (request, response, next) => {
     Incidente.fetchAll()
         .then(([rows, fieldData]) => {
+            console
             response.render('index', {
                 nuevoIncidente: rows
             });
@@ -16,10 +17,8 @@ exports.get = (request, response, next) => {
 exports.getIncidente = (request, response, next) => {
     Tipo.fetchAll()
         .then(([rowsTipo, fieldData]) => {
-            console.log(rowsTipo);
             Lugar.fetchAll()
                 .then(([rowsLugar, fieldData]) => {
-                    console.log(rowsTipo);
                     response.render('incidente', {
                         nuevoTipo: rowsTipo,
                         nuevoLugar: rowsLugar
@@ -28,12 +27,11 @@ exports.getIncidente = (request, response, next) => {
                 .catch(err => console.log(err));
         })
         .catch(err => console.log(err));
+    console.log(request.body);
 };
 
 exports.postIncidente = (request, response, next) => {
-    console.log(request.body);
     const incidente = new Incidente(request.body.tipo, request.body.lugar);
-    console.log(incidente);
     incidente.save()
         .then(() => {
             response.redirect('/');

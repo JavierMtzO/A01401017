@@ -36,6 +36,10 @@
 
             <a href="/incidente" class="right btn-floating btn-large waves-effect waves-light red"><i
                     class="material-icons">add</i></a>
+            <!-- <button class="right btn-floating btn-large waves-effect waves-light red" onclick="agregar()">
+                <i class="material-icons">add
+                </i>
+            </button> -->
 
             <table class="highlight">
                 <thead>
@@ -48,8 +52,8 @@
                 <% for (let incidente of nuevoIncidente) {%>
                 <tbody>
                     <tr>
-                        <td><%= incidente.tipo %></td>
-                        <td><%= incidente.lugar %></td>
+                        <td><%= incidente.tipoAccidente %></td>
+                        <td><%= incidente.lugarAccidente %></td>
                         <td><%= incidente.fecha %></td>
                     </tr>
                 </tbody>
@@ -74,6 +78,33 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- ---------------- AJAX ------------------ -->
+    <script>
+        const agregar = () => {
+            // const mensaje = document.getElementById('mensaje').value;
+            //El token de protección CSRF
+            // const csrf = document.getElementById('_csrf').value;
+            console.log("Hola Ajax");
+            const data = {};
+            //función que manda la petición asíncrona
+            fetch('/incidente', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    // 'csrf-token': csrf
+                },
+                body: JSON.stringify(data)
+            }).then(result => {
+                return result.json(); //Regresa otra promesa
+            }).then(data => {
+                //Modificamos el DOM de nuestra página de acuerdo a los datos de la segunda promesa
+                //...
+            }).catch(err => {
+                console.log(err);
+            });
+        };
+    </script>
 
 </body>
 

@@ -25,11 +25,12 @@ GROUP BY M.Clave
 -- ***
 -- Para cada proveedor, indicar su razón social y mostrar la cantidad promedio de cada material entregado, detallando la clave y descripción del material, excluyendo aquellos proveedores para los que la cantidad promedio sea menor a 500.
 
-SELECT Razonsocial, Sum(Cantidad), M.clave
+SELECT Razonsocial, M.clave, Descripcion, AVG(Cantidad)
 FROM Entregan E, Proveedores P, Materiales M
 WHERE E.Rfc = P.Rfc 
 AND E.Clave = M.clave
-GROUP BY Razonsocial
+GROUP BY Razonsocial, M.clave, Descripcion
+HAVING AVG(Cantidad) < 500
 ORDER BY Razonsocial
 
 
